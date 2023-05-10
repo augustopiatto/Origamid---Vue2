@@ -4,7 +4,10 @@ import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  <main>
-    <RouterView />
-  </main>
+  <div>
+    
+    <main>
+      <RouterView />
+    </main>
+  </div>
 </template>

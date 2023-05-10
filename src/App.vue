@@ -1,13 +1,12 @@
-<script setup>
-import { RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
   <div>
-    
+    <v-toolbar theme="dark" title="AugustinhoShop"></v-toolbar>
     <main>
       <RouterView />
     </main>
   </div>
 </template>
+
+<script setup>
+import { RouterView } from 'vue-router'
+</script>

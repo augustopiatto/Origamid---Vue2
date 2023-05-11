@@ -1,41 +1,41 @@
-# projeto-origamid
+# Origamid-Vue
 
-This template should help get you started developing with Vue 3 in Vite.
+## Visão Geral do Projeto
+Utiliza Vue 3, Javascript, Vuex, Vite, Vitest, Router.
+Criado para colocar em prática os aprendizados do curso de Vue 2 do site https://www.origamid.com/.
 
-## Recommended IDE Setup
+## Preview
+O projeto é uma página de vendas ...TODO
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Começando
+Para iniciar o projeto, siga os passos abaixo:
 
-## Customize configuration
+- Clone o repositório em sua máquina local
+- Execute ```npm install``` para instalar as dependências do projeto
+- Execute ```npm run dev``` para iniciar o servidor de desenvolvimento
+- Abra seu navegador e acesse ```http://localhost:5173/``` para ver a aplicação funcionando
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## Tecnologias e Funcionalidades
+### Tecnologias
+O projeto inclui as seguintes tecnologias:
 
-## Project Setup
+- Vue 3 para construir interfaces de usuário reativas
+- JavaScript para desenvolvimento e escalabilidade
+- Vuex para gerenciamento de estado
+- Vite como bundler
+- Vitest para testes unitários
+- Router para navegação em uma Single Page Application
 
-```sh
-npm install
-```
+### Funcionalidades
+O projeto possui as seguintes funcionalidades:
 
-### Compile and Hot-Reload for Development
+Entradas para a compra de uma viagem.
+Validação de dados.
 
-```sh
-npm run dev
-```
+## Scripts
+O projeto inclui os seguintes scripts:
 
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+- npm run dev: Inicia o servidor de desenvolvimento
+- npm run build: Builda o aplicativo pronto para produção
+- npm run lint: Linta e corrige os arquivos
+- npm run test:unit: Executa os testes unitários usando o Vitest

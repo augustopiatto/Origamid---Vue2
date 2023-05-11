@@ -14,5 +14,5 @@
 
 <script lang="js" setup>
 import { RouterView } from 'vue-router'
-import DrawerIcon from '@/components/DrawerIcon.vue'
+import DrawerIcon from '@/components/Drawer/DrawerIcon.vue'
 </script>

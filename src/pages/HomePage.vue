@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-row class="pa-5 gap-3">
+    <v-row class="pa-5">
       <v-col cols="12">
         <v-row align="center" justify="center" class="gap-3">
           <mdicon name="alert" />
@@ -8,11 +8,20 @@
         </v-row>
       </v-col>
       <v-col cols="12">
-        <v-autocomplete v-model="product" label="Busca mockada" :items="products">
+        <v-autocomplete
+          v-model="product"
+          label="Busca mockada"
+          item-title="name"
+          item-value="id"
+          :items="products"
+        >
           <template v-slot:append-inner="{ on }">
             <mdicon v-on="on" name="magnify" />
           </template>
         </v-autocomplete>
+      </v-col>
+      <v-col cols="6" v-for="product in products" :key="product.name" align="center">
+        <ProductModal :name="product.name" :price="product.price" :type="product.type" />
       </v-col>
     </v-row>
   </v-container>
@@ -20,10 +29,16 @@
 
 <script lang="js">
 import { products } from '@/api'
+import ProductModal from '@/components/ProductModal.vue'
 
 export default {
+  name: 'HomePage',
+  components: {
+    ProductModal
+  },
   data () {
     return {
+      product: null,
       products: []
     }
   },

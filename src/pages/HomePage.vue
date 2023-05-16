@@ -10,7 +10,7 @@
       <v-col cols="12">
         <v-autocomplete v-model="product" label="Busca mockada" color="white" :items="products">
           <template v-slot:append-inner="{ on }">
-            <mdicon v-on="on" name="search" />
+            <mdicon v-on="on" name="magnify" />
           </template>
         </v-autocomplete>
       </v-col>

@@ -2,6 +2,8 @@
   <div class="product-modal">
     <v-card>
       <v-card-text class="flex-column align-start gap-3">
+        {{ image }}
+        <img :src="image" :alt="name" />
         <h1 class="font-weight-bold">{{ name }}</h1>
         <h3 class="font-weight-medium">{{ $filters.real(price) }}</h3>
         <h3 class="font-weight-medium">Descrição</h3>
@@ -25,6 +27,10 @@
 <script lang="js">
 export default {
   props: {
+    image: {
+      required: true,
+      type: String
+    },
     name: {
       required: true,
       type: String

@@ -13,6 +13,7 @@
 import DrawerMenu from '@/components/Drawer/DrawerMenu.vue'
 
 export default {
+  name: 'DrawerIcon',
   data () {
     return {
       drawer: false

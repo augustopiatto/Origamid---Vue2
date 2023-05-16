@@ -9,12 +9,14 @@
     <main class="a__main--bodysize">
       <RouterView />
     </main>
+    <ToastModal />
   </div>
 </template>
 
 <script lang="js" setup>
 import { RouterView } from 'vue-router'
 import DrawerIcon from '@/components/Drawer/DrawerIcon.vue'
+import ToastModal from '@/components/ToastModal.vue'
 </script>
 
 <style lang="scss" scoped>

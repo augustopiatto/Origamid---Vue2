@@ -8,6 +8,7 @@
 import DrawerItem from '@/components/Drawer/DrawerItem.vue'
 
 export default {
+  name: 'DrawerMenu',
   components: {
     DrawerItem
   },

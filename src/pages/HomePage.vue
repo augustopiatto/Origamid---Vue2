@@ -8,7 +8,7 @@
         </v-row>
       </v-col>
       <v-col cols="12">
-        <v-autocomplete v-model="product" label="Busca mockada" color="white" :items="products">
+        <v-autocomplete v-model="product" label="Busca mockada" :items="products">
           <template v-slot:append-inner="{ on }">
             <mdicon v-on="on" name="magnify" />
           </template>
@@ -19,18 +19,16 @@
 </template>
 
 <script lang="js">
+import { products } from '@/api'
+
 export default {
   data () {
     return {
-      products: [
-        'Água, coca, latão',
-        'Brusinha',
-        'Cerulá',
-        'Capinha de cerulá',
-        'Croissant',
-        'Laptop',
-      ]
+      products: []
     }
+  },
+  async mounted () {
+    this.products = await products.getProducts()
   }
 }
 </script>

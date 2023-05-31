@@ -26,6 +26,7 @@ import ToastModal from '@/components/ToastModal.vue'
     top: 64px;
     height: calc(100vh - 64px /* tamanho toolbar */);
     width: 100%;
+    overflow-y: auto;
   }
 }
 </style>

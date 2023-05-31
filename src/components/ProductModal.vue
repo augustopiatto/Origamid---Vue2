@@ -2,9 +2,8 @@
   <div class="product-modal">
     <v-card>
       <v-card-text class="flex-column align-start gap-3">
-        {{ image }}
-        <img :src="image" :alt="name" />
         <h1 class="font-weight-bold">{{ name }}</h1>
+        <img class="pm-img--size" :src="getImageUrl(image)" :alt="name" />
         <h3 class="font-weight-medium">{{ $filters.real(price) }}</h3>
         <h3 class="font-weight-medium">Descrição</h3>
         <p>Esse produto é um {{ type }}</p>
@@ -44,6 +43,12 @@ export default {
       type: String
     }
   },
+  setup() {
+    const getImageUrl = (image) => {
+      return new URL(`../assets/product-images/${image}`, import.meta.url).href
+    }
+    return { getImageUrl }
+  },
   methods: {
     addToCart () {
       console.log('carrinho')
@@ -61,5 +66,12 @@ export default {
   max-height: 80%;
   width: 80%;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+  .pm-img--size {
+    height: auto;
+    width: auto;
+    max-height: 200px;
+    max-width: 200px;
+  }
 }
 </style>

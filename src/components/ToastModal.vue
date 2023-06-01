@@ -1,8 +1,10 @@
 <template>
   <div v-if="toast.message.length" class="toast-modal">
     <div class="tm__centered-div" :class="toast.type">
-      {{ toast.message }} teste teste teste teste teste teste teste teste
-      <mdicon name="close" class="tm__icon--clickable" @click="closeToast" />
+      <span>{{ toast.message }} teste teste teste teste teste teste teste teste</span>
+      <div class="tmcd__close-button--position">
+        <mdicon name="close" class="tmcdcb__icon--clickable" @click="closeToast" />
+      </div>
     </div>
   </div>
 </template>
@@ -49,12 +51,18 @@ export default {
     padding: 8px;
     border-radius: 5px 5px 0 0;
     color: white;
-    max-width: 300px;
+    width: 300px;
     z-index: 10;
-  }
 
-  .tm__icon--clickable {
-    cursor: pointer;
+    .tmcd__close-button--position {
+      position: relative;
+      left: 90%;
+      height: 100%;
+
+      .tmcdcb__icon--clickable {
+        cursor: pointer;
+      }
+    }
   }
 }
 </style>

@@ -24,11 +24,10 @@ import ToastModal from '@/components/ToastModal.vue'
 <style lang="scss" scoped>
 .app {
   .a__main--bodysize {
-    position: fixed;
+    position: absolute;
     top: 64px;
     height: calc(100vh - 64px /* tamanho toolbar */);
     width: 100%;
-    overflow-y: auto;
   }
 }
 

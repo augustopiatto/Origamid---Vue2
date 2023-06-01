@@ -2,11 +2,11 @@
   <div class="product-modal">
     <v-card>
       <v-card-text class="flex-column align-start gap-3">
-        <h1 class="font-weight-bold">{{ name }}</h1>
-        <img class="pm-img--size" :src="getImageUrl(image)" :alt="name" />
-        <h3 class="font-weight-medium">{{ $filters.real(price) }}</h3>
+        <h1 class="font-weight-bold">{{ product.name }}</h1>
+        <img class="pm-img--size" :src="getImageUrl(product.image)" :alt="product.name" />
+        <h3 class="font-weight-medium">{{ $filters.real(product.price) }}</h3>
         <h3 class="font-weight-medium">Descrição</h3>
-        <p>Esse produto é um {{ type }}</p>
+        <p>Esse produto é um {{ product.type }}</p>
       </v-card-text>
       <v-divider />
       <v-card-actions>
@@ -20,34 +20,25 @@
         </v-row>
       </v-card-actions>
     </v-card>
-    <AddToCartPopup ref="addToCardPopup" :name="name" />
+    <AddToCartPopup ref="addToCardPopup" :name="product.name" />
+    <ProductDetails ref="productDetails" />
   </div>
 </template>
 
 <script lang="js">
 import AddToCartPopup from '@/components/popups/AddToCartPopup.vue'
+import ProductDetails from '@/components/popups/ProductDetails.vue'
 
 export default {
   name: 'ProductModal',
   components: {
     AddToCartPopup,
+    ProductDetails
   },
   props: {
-    image: {
+    product: {
       required: true,
-      type: String
-    },
-    name: {
-      required: true,
-      type: String
-    },
-    price: {
-      required: true,
-      type: Number
-    },
-    type: {
-      required: true,
-      type: String
+      type: Object
     }
   },
   setup() {
@@ -61,6 +52,7 @@ export default {
       this.$refs.addToCardPopup.openPopup()
     },
     openPopup () {
+      this.$refs.productDetails.openPopup(this.product)
     }
   }
 }

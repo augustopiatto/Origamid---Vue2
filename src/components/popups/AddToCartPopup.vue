@@ -25,7 +25,7 @@ export default {
   },
   computed: {
     title() {
-      return `Adicionar ${name.toLowerCase()} ao carrinho?`
+      return `Adicionar ${this.name.toLowerCase()} ao carrinho?`
     }
   },
   methods: {

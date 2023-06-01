@@ -21,12 +21,7 @@
         </v-autocomplete>
       </v-col>
       <v-col cols="6" v-for="product in products" :key="product.name" align="center">
-        <ProductModal
-          :image="product.image"
-          :name="product.name"
-          :price="product.price"
-          :type="product.type"
-        />
+        <ProductModal :product="product" />
       </v-col>
     </v-row>
   </v-container>

@@ -3,14 +3,14 @@
     <v-card class="base-popup">
       <v-card-text>
         <h1>{{ title }}</h1>
-        <v-row align="center" justify="center" class="bp__row--height">
+        <div class="bp__row--height">
           <slot />
-        </v-row>
+        </div>
       </v-card-text>
       <v-card-actions class="bp__actions--fixed">
         <v-row justify="space-between" class="px-5">
           <v-btn class="c-btn error" @click="close"> Fechar </v-btn>
-          <v-btn class="c-btn success" @click="confirm"> Confirmar </v-btn>
+          <v-btn v-if="!this.viewOnly" class="c-btn success" @click="confirm"> Confirmar </v-btn>
         </v-row>
       </v-card-actions>
     </v-card>
@@ -32,6 +32,10 @@ export default {
     title: {
       required: true,
       type: String
+    },
+    viewOnly: {
+      default: false,
+      type: Boolean
     },
     visible: {
       required: true,

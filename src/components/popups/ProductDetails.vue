@@ -1,11 +1,5 @@
 <template>
-  <BasePopup
-    view-only
-    :title="product.name"
-    :visible="visible"
-    @close="closePopup"
-    @confirm="confirm"
-  >
+  <BasePopup view-only :title="product.name" @close="closePopup" @confirm="confirm">
     <v-row class="product-details">
       <v-column>
         <img class="pd__img" :src="getImageUrl(product.image)" :alt="product.name" />
@@ -25,10 +19,10 @@ export default {
   components: {
     BasePopup
   },
-  data() {
-    return {
-      product: {},
-      visible: false
+  props: {
+    product: {
+      required: true,
+      type: Object
     }
   },
   setup() {
@@ -39,7 +33,7 @@ export default {
   },
   methods: {
     closePopup() {
-      this.visible = false
+      this.$emit('close')
     },
     confirm() {
       this.$store.commit('toast', {
@@ -47,10 +41,6 @@ export default {
         type: 'success'
       })
       this.closePopup()
-    },
-    openPopup(product) {
-      this.visible = true
-      this.product = product
     }
   }
 }

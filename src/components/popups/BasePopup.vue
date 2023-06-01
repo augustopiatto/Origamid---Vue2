@@ -1,20 +1,21 @@
 <template>
-  <v-dialog v-model="isVisible" width="60%" :height="height + '%'" persistent>
-    <v-card class="base-popup">
-      <v-card-text>
-        <h1>{{ title }}</h1>
-        <div class="bp__row--height">
+  <div v-click-outside="closeByClickingOutside">
+    <!-- gambiarra usando v-dialog porque no quero reescrever código que já existe -->
+    <v-dialog v-model="isVisible" width="60%" :height="height + '%'">
+      <v-card class="base-popup">
+        <v-card-text>
+          <h1>{{ title }}</h1>
           <slot />
-        </div>
-      </v-card-text>
-      <v-card-actions class="bp__actions--fixed">
-        <v-row justify="space-between" class="px-5">
-          <v-btn class="c-btn error" @click="close"> Fechar </v-btn>
-          <v-btn v-if="!this.viewOnly" class="c-btn success" @click="confirm"> Confirmar </v-btn>
-        </v-row>
-      </v-card-actions>
-    </v-card>
-  </v-dialog>
+        </v-card-text>
+        <v-card-actions class="bp__actions--fixed">
+          <v-row justify="space-between" class="px-5">
+            <v-btn class="c-btn error" @click="close"> Fechar </v-btn>
+            <v-btn v-if="!this.viewOnly" class="c-btn success" @click="confirm"> Confirmar </v-btn>
+          </v-row>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+  </div>
 </template>
 
 <script lang="js">
@@ -36,20 +37,21 @@ export default {
     viewOnly: {
       default: false,
       type: Boolean
-    },
-    visible: {
-      required: true,
-      type: Boolean
     }
   },
   computed: {
     isVisible () {
-      return this.visible
+      return true
     }
   },
   methods: {
     close () {
       this.$emit('close')
+    },
+    closeByClickingOutside () {
+    if (this.viewOnly) {
+        this.close()
+      }
     },
     confirm () {
       this.$emit('confirm')
@@ -61,10 +63,6 @@ export default {
 <style lang="scss" scoped>
 .base-popup {
   min-height: 50%;
-
-  .bp__row--height {
-    height: calc(100% - 24px /* margin do v-row **/);
-  }
 
   .bp__actions--fixed {
     position: sticky;

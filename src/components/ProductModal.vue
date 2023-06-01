@@ -20,8 +20,13 @@
         </v-row>
       </v-card-actions>
     </v-card>
-    <AddToCartPopup ref="addToCardPopup" :name="product.name" />
-    <ProductDetails ref="productDetails" />
+    <AddToCartPopup
+      v-if="visibleAddToCartPopup"
+      :name="product.name"
+      @close="closeAddToCartPopup"
+      @confirm="closeAddToCartPopup"
+    />
+    <ProductDetails v-if="visibleProductDetails" :product="product" @close="closeProductDetails" />
   </div>
 </template>
 
@@ -41,6 +46,12 @@ export default {
       type: Object
     }
   },
+  data () {
+    return {
+      visibleAddToCartPopup: false,
+      visibleProductDetails: false
+    }
+  },
   setup() {
     const getImageUrl = (image) => {
       return new URL(`../assets/product-images/${image}`, import.meta.url).href
@@ -49,10 +60,16 @@ export default {
   },
   methods: {
     addToCart () {
-      this.$refs.addToCardPopup.openPopup()
+      this.visibleAddToCartPopup = true
+    },
+    closeAddToCartPopup () {
+      this.visibleAddToCartPopup = false
+    },
+    closeProductDetails () {
+      this.visibleProductDetails = false
     },
     openPopup () {
-      this.$refs.productDetails.openPopup(this.product)
+      this.visibleProductDetails = true
     }
   }
 }

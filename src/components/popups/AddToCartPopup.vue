@@ -1,6 +1,8 @@
 <template>
   <BasePopup :title="title" :visible="visible" @close="closePopup" @confirm="confirm">
-    <p class="text-md-h5">Você está adicionando um produto ao carrinho, e não comprando.</p>
+    <v-row align="center" justify="center" class="add-to-cart-popup">
+      <p class="text-md-h5">Você está adicionando um produto ao carrinho, e não comprando.</p>
+    </v-row>
   </BasePopup>
 </template>
 
@@ -45,3 +47,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.add-to-cart-popup {
+  height: calc(100% - 24px /* margin do v-row **/);
+}
+</style>

@@ -5,7 +5,7 @@
 </template>
 
 <script lang="js">
-import DrawerItem from '@/components/Drawer/DrawerItem.vue'
+import DrawerItem from '@/components/drawer/DrawerItem.vue'
 
 export default {
   name: 'DrawerMenu',

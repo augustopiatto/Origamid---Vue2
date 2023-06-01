@@ -21,9 +21,13 @@ a,
 }
 
 .success {
-  background-color: #88b04b;
+  background-color: #88b04b !important;
+  color: white !important;
+  text-transform: uppercase !important;
 }
 
 .error {
-  background-color: #ed4337;
+  background-color: #ed4337 !important;
+  color: white !important;
+  text-transform: uppercase !important;
 }

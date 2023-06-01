@@ -10,7 +10,7 @@
 </template>
 
 <script lang="js">
-import DrawerMenu from '@/components/Drawer/DrawerMenu.vue'
+import DrawerMenu from '@/components/drawer/DrawerMenu.vue'
 
 export default {
   name: 'DrawerIcon',

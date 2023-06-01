@@ -20,11 +20,18 @@
         </v-row>
       </v-card-actions>
     </v-card>
+    <AddToCartPopup ref="addToCardPopup" />
   </div>
 </template>
 
 <script lang="js">
+import AddToCartPopup from '@/components/popups/AddToCartPopup.vue'
+
 export default {
+  name: 'ProductModal',
+  components: {
+    AddToCartPopup,
+  },
   props: {
     image: {
       required: true,
@@ -51,10 +58,9 @@ export default {
   },
   methods: {
     addToCart () {
-      console.log('carrinho')
     },
     openPopup () {
-      console.log('popup')
+      this.$refs.addToCardPopup.openPopup()
     }
   }
 }

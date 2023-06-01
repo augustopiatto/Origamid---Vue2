@@ -1,11 +1,7 @@
 <template>
-  <div v-if="toast.message.length" class="toast-modal">
-    <div class="tm__centered-div" :class="toast.type">
-      <span>{{ toast.message }} teste teste teste teste teste teste teste teste</span>
-      <div class="tmcd__close-button--position">
-        <mdicon name="close" class="tmcdcb__icon--clickable" @click="closeToast" />
-      </div>
-    </div>
+  <div v-if="toast.message.length" class="toast-modal" :class="toast.type">
+    <span>{{ toast.message }}</span>
+    <mdicon name="close" class="tm__icon--clickable" @click="closeToast" />
   </div>
 </template>
 
@@ -38,31 +34,20 @@ export default {
 
 <style lang="scss" scoped>
 .toast-modal {
-  position: sticky;
-  bottom: 0;
+  width: 300px;
+  margin-left: -150px;
+  color: white;
+  text-align: center;
+  border-radius: 6px 6px 0 0;
+  padding: 16px;
+  position: fixed;
+  z-index: 10;
   left: 50%;
-  float: left;
+  bottom: 0px;
 
-  .tm__centered-div {
-    position: relative;
-    left: -50%;
-    float: left;
-
-    padding: 8px;
-    border-radius: 5px 5px 0 0;
-    color: white;
-    width: 300px;
-    z-index: 10;
-
-    .tmcd__close-button--position {
-      position: relative;
-      left: 90%;
-      height: 100%;
-
-      .tmcdcb__icon--clickable {
-        cursor: pointer;
-      }
-    }
+  .tm__icon--clickable {
+    margin-left: 16px;
+    cursor: pointer;
   }
 }
 </style>

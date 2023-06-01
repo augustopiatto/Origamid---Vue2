@@ -35,8 +35,7 @@ export default {
     confirm() {
       this.$store.commit('toast', {
         message: 'Adicionado com sucesso',
-        type: 'success',
-        duration: 1000000000
+        type: 'success'
       })
       this.closePopup()
     },

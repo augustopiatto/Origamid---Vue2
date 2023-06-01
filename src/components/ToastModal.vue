@@ -1,26 +1,15 @@
 <template>
-  <transition name="toast">
-    <div v-if="toast.message.length" class="toast-modal" :class="toast.type">
-      <v-row no-gutters align="center" class="px-4">
-        <v-col cols="11">
-          <v-row align="center" justify="center">
-            {{ toast.message }}
-          </v-row>
-        </v-col>
-        <v-col cols="1">
-          <mdicon name="close" class="tm__icon--clickable" @click="closeToast" />
-        </v-col>
-      </v-row>
+  <div v-if="toast.message.length" class="toast-modal">
+    <div class="tm__centered-div" :class="toast.type">
+      {{ toast.message }} teste teste teste teste teste teste teste teste
+      <mdicon name="close" class="tm__icon--clickable" @click="closeToast" />
     </div>
-  </transition>
+  </div>
 </template>
 
 <script>
 export default {
   name: 'ToastModal',
-  data() {
-    return {}
-  },
   watch: {
     'toast.message': {
       handler() {
@@ -47,27 +36,25 @@ export default {
 
 <style lang="scss" scoped>
 .toast-modal {
-  height: auto;
+  position: sticky;
   bottom: 0;
-  padding: 8px;
-  position: fixed;
-  border-radius: 5px 5px 0 0;
-  color: white;
-  z-index: 10;
-  min-width: 200px;
-  left: calc(50% - 250px);
+  left: 50%;
+  float: left;
+
+  .tm__centered-div {
+    position: relative;
+    left: -50%;
+    float: left;
+
+    padding: 8px;
+    border-radius: 5px 5px 0 0;
+    color: white;
+    max-width: 300px;
+    z-index: 10;
+  }
 
   .tm__icon--clickable {
     cursor: pointer;
   }
-}
-.toast-enter-active,
-.toast-leave-active {
-  transition: all 0.3s ease-out;
-}
-
-.toast-enter-from,
-.toast-leave-to {
-  transform: translateY();
 }
 </style>

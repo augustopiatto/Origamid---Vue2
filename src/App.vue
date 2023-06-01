@@ -8,8 +8,10 @@
     </v-toolbar>
     <main class="a__main--bodysize">
       <RouterView />
+      <Transition name="toast">
+        <ToastModal />
+      </Transition>
     </main>
-    <ToastModal />
   </div>
 </template>
 
@@ -28,5 +30,15 @@ import ToastModal from '@/components/ToastModal.vue'
     width: 100%;
     overflow-y: auto;
   }
+}
+
+.toast-enter-active,
+.toast-leave-active {
+  transition: all 0.5s ease-out;
+}
+
+.toast-enter-from,
+.toast-leave-to {
+  transform: translateY(100px);
 }
 </style>

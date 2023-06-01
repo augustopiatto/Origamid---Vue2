@@ -1,5 +1,5 @@
 <template>
-  <BasePopup :title="title" :visible="visible" @close="closePopup">
+  <BasePopup :title="title" :visible="visible" @close="closePopup" @confirm="confirm">
     <p class="text-md-h5">Você está adicionando um produto ao carrinho, e não comprando.</p>
   </BasePopup>
 </template>
@@ -31,6 +31,14 @@ export default {
   methods: {
     closePopup() {
       this.visible = false
+    },
+    confirm() {
+      this.$store.commit('toast', {
+        message: 'Adicionado com sucesso',
+        type: 'success',
+        duration: 1000000000
+      })
+      this.closePopup()
     },
     openPopup() {
       this.visible = true

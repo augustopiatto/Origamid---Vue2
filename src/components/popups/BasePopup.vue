@@ -3,11 +3,11 @@
     <v-card class="base-popup">
       <v-card-text>
         <h1>{{ title }}</h1>
-        <v-row align="center" justify="center" class="bp-row--height">
+        <v-row align="center" justify="center" class="bp__row--height">
           <slot />
         </v-row>
       </v-card-text>
-      <v-card-actions class="bp-actions--fixed">
+      <v-card-actions class="bp__actions--fixed">
         <v-row justify="space-between" class="px-5">
           <v-btn class="c-btn error" @click="close"> Fechar </v-btn>
           <v-btn class="c-btn success" @click="confirm"> Confirmar </v-btn>
@@ -48,7 +48,7 @@ export default {
       this.$emit('close')
     },
     confirm () {
-      this.$emit('close')
+      this.$emit('confirm')
     }
   }
 }
@@ -58,11 +58,11 @@ export default {
 .base-popup {
   min-height: 50%;
 
-  .bp-row--height {
+  .bp__row--height {
     height: calc(100% - 24px /* margin do v-row **/);
   }
 
-  .bp-actions--fixed {
+  .bp__actions--fixed {
     position: sticky;
     width: 100%;
     border-top: solid 1px grey;

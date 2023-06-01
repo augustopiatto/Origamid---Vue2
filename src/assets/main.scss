@@ -13,6 +13,10 @@ a,
   transition: 0.4s;
 }
 
+h1 {
+  font-weight: 600;
+}
+
 @for $i from 1 through 5 {
   .gap-#{$i} {
     display: flex;
@@ -20,14 +24,16 @@ a,
   }
 }
 
+.c-btn {
+  // c de custom
+  color: white !important;
+  text-transform: uppercase;
+}
+
 .success {
   background-color: #88b04b !important;
-  color: white !important;
-  text-transform: uppercase !important;
 }
 
 .error {
   background-color: #ed4337 !important;
-  color: white !important;
-  text-transform: uppercase !important;
 }

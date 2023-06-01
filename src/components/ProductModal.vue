@@ -20,7 +20,7 @@
         </v-row>
       </v-card-actions>
     </v-card>
-    <AddToCartPopup ref="addToCardPopup" />
+    <AddToCartPopup ref="addToCardPopup" :name="name" />
   </div>
 </template>
 
@@ -58,9 +58,9 @@ export default {
   },
   methods: {
     addToCart () {
+      this.$refs.addToCardPopup.openPopup()
     },
     openPopup () {
-      this.$refs.addToCardPopup.openPopup()
     }
   }
 }

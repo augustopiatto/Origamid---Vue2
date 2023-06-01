@@ -1,13 +1,16 @@
 <template>
-  <v-dialog v-model="isVisible" width="60%" :height="height + '%'" persistent class="base-popup">
-    <v-card>
+  <v-dialog v-model="isVisible" width="60%" :height="height + '%'" persistent>
+    <v-card class="base-popup">
       <v-card-text>
-        <slot />
+        <h1>{{ title }}</h1>
+        <v-row align="center" justify="center" class="bp-row--height">
+          <slot />
+        </v-row>
       </v-card-text>
       <v-card-actions class="bp-actions--fixed">
         <v-row justify="space-between" class="px-5">
-          <v-btn class="error" @click="close"> Fechar </v-btn>
-          <v-btn class="success" @click="confirm"> Confirmar </v-btn>
+          <v-btn class="c-btn error" @click="close"> Fechar </v-btn>
+          <v-btn class="c-btn success" @click="confirm"> Confirmar </v-btn>
         </v-row>
       </v-card-actions>
     </v-card>
@@ -20,7 +23,15 @@ export default {
   props: {
     height: {
       default: 50,
-      type: Number
+      type: Number,
+      validator(value) {
+        // compatível com o css "base-popup"
+        return value >= 50
+      }
+    },
+    title: {
+      required: true,
+      type: String
     },
     visible: {
       required: true,
@@ -29,14 +40,14 @@ export default {
   },
   computed: {
     isVisible () {
-      return this.visible || false
+      return this.visible
     }
   },
   methods: {
-    async close () {
+    close () {
       this.$emit('close')
     },
-    async confirm () {
+    confirm () {
       this.$emit('close')
     }
   }
@@ -45,6 +56,12 @@ export default {
 
 <style lang="scss" scoped>
 .base-popup {
+  min-height: 50%;
+
+  .bp-row--height {
+    height: calc(100% - 24px /* margin do v-row **/);
+  }
+
   .bp-actions--fixed {
     position: sticky;
     width: 100%;

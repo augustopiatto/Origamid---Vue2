@@ -26,8 +26,8 @@ export default {
   top: 64px;
   width: 300px;
   height: 100vh;
-  background-color: #f7e7ce;
+  background-color: rgb(150, 150, 150);
   z-index: 1;
-  border-right: solid 2px #cfb997;
+  border-right: solid 2px rgb(128, 128, 128);
 }
 </style>

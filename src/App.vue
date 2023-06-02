@@ -7,7 +7,11 @@
       </v-row>
     </v-toolbar>
     <main class="a__main--bodysize">
-      <RouterView />
+      <RouterView v-slot="{ Component }">
+        <Transition name="router" mode="out-in">
+          <component :is="Component" />
+        </Transition>
+      </RouterView>
       <Transition name="toast">
         <ToastModal />
       </Transition>
@@ -39,5 +43,16 @@ import ToastModal from '@/components/ToastModal.vue'
 .toast-enter-from,
 .toast-leave-to {
   transform: translateY(100px);
+}
+
+.router-enter-active,
+.router-leave-active {
+  transition: all 0.5s;
+}
+
+.router-enter-from,
+.router-leave-to {
+  transform: translateX(-200px);
+  opacity: 0;
 }
 </style>

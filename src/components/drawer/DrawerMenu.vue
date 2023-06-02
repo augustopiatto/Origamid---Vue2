@@ -1,6 +1,7 @@
 <template>
   <div class="drawer-menu" v-click-outside="closeMenu">
     <DrawerItem icon="home" title="Página inicial" to="/" />
+    <DrawerItem icon="fire" title="Página secundária" to="/secpage" />
   </div>
 </template>
 
@@ -29,5 +30,10 @@ export default {
   background-color: rgb(150, 150, 150);
   z-index: 1;
   border-right: solid 2px rgb(128, 128, 128);
+}
+
+.router-link-exact-active {
+  color: #681da8;
+  text-decoration: underline;
 }
 </style>

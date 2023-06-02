@@ -1,7 +1,7 @@
 <template>
-  <RouterLink :to="to" class="drawer-item">
+  <RouterLink :to="to" class="drawer-item" @click="closeMenu">
     <mdicon :name="icon" />
-    <p>{{ title }}</p>
+    <p :name="to">{{ title }}</p>
   </RouterLink>
 </template>
 
@@ -26,6 +26,13 @@ export default {
   },
   components: {
     RouterLink
+  },
+  methods: {
+    closeMenu (event) {
+      if (this.$route.path !== event.target.getAttribute('name')) {
+        this.$parent.closeMenu()
+      }
+    }
   }
 }
 </script>

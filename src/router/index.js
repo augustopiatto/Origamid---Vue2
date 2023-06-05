@@ -14,6 +14,11 @@ const router = createRouter({
       path: '/secpage',
       name: 'secondaryPage',
       component: SecondaryPage
+    },
+    // caso nenhum path seja compatível, redireciona pra home
+    {
+      path: '/:pathMatch(.*)*',
+      component: HomePage
     }
     // {
     //   path: '/about',
@@ -23,7 +28,10 @@ const router = createRouter({
     //   // which is lazy-loaded when the route is visited.
     //   component: () => import('../views/AboutView.vue')
     // }
-  ]
+  ],
+  scrollBehavior() {
+    return window.scrollTo({ bottom: 0, behavior: 'smooth' })
+  }
 })
 
 export default router

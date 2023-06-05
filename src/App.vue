@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <v-toolbar theme="dark">
+    <v-toolbar theme="dark" class="a__toolbar--position">
       <DrawerIcon />
       <v-row align="center" justify="center">
         <h1>AugustinhoShop</h1>
@@ -32,6 +32,12 @@ import ToastModal from '@/components/ToastModal.vue'
     top: 64px;
     height: calc(100vh - 64px /* tamanho toolbar */);
     width: 100%;
+  }
+
+  .a__toolbar--position {
+    position: fixed;
+    top: 0;
+    z-index: 20;
   }
 }
 

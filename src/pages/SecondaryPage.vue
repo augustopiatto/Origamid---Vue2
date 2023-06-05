@@ -1,9 +1,9 @@
 <template>
   <v-row align="center" justify="center" class="secondary-page">
     <v-column>
-      <p class="text-md-h5 font-weight-bold">WOOOOW! Que vazio, não?</p>
       <v-progress-circular v-if="loading" color="primary" indeterminate />
       <div v-else>
+        <p class="text-md-h5 font-weight-bold">WOOOOW! Que vazio, não?</p>
         <img :src="rickAndMorty.image" />
         <p>{{ rickAndMorty.name }}</p>
         <p>{{ rickAndMorty.location.name }}</p>
@@ -13,36 +13,17 @@
 </template>
 
 <script lang="js">
+
+import rickAndMortyAPI from '@/mixins/rickAndMortyAPI.js'
+
 export default {
   name: 'SecondaryPage',
-  data () {
-    return {
-      rickAndMorty: {},
-      loading: false
-    }
-  },
+  mixins: [rickAndMortyAPI],
   async created () {
     await this.getAPI()
     setTimeout(() => {
       this.$router.push('/')
     }, 5000)
-  },
-  methods: {
-    async getAPI () {
-      try {
-        this.loading = true
-        const response = await fetch('https://rickandmortyapi.com/api/character')
-        const jsonResponse = await response.json()
-        this.rickAndMorty = jsonResponse.results[0]
-      } catch (error) {
-        this.$store.commit('toast', {
-          message: error,
-          type: 'error'
-        })
-      } finally {
-        this.loading = false
-      }
-    }
   }
 }
 </script>

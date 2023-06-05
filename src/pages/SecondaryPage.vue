@@ -14,15 +14,18 @@
 
 <script lang="js">
 export default {
-  name: "SecondaryPage",
+  name: 'SecondaryPage',
   data () {
     return {
       rickAndMorty: {},
       loading: false
     }
   },
-  created () {
-    this.getAPI()
+  async created () {
+    await this.getAPI()
+    setTimeout(() => {
+      this.$router.push('/')
+    }, 5000)
   },
   methods: {
     async getAPI () {

@@ -4,7 +4,10 @@
       <v-progress-circular v-if="loading" color="primary" indeterminate />
       <div v-else>
         <p class="text-md-h5 font-weight-bold">WOOOOW! Que vazio, não?</p>
-        <RouterLink :to="{ name: 'rickInfos', params: { rickInfos: rickAndMorty.name } }">
+        <RouterLink
+          :to="{ name: 'rickInfos', params: { rickInfos: rickAndMorty.name } }"
+          @click="clearTimeout"
+        >
           <img :src="rickAndMorty.image" />
         </RouterLink>
         <!-- Esse router view não mostra nada a princípio porque o secondaryPage não tem children no
@@ -18,15 +21,23 @@
 <script lang="js">
 
 import rickAndMortyAPI from '@/mixins/rickAndMortyAPI.js'
+import router from '@/router/index.js';
+
+const timeout = setTimeout(() => {
+  router.push('/')
+}, 5000)
 
 export default {
   name: 'SecondaryPage',
   mixins: [rickAndMortyAPI],
   async created () {
     await this.getAPI()
-    // setTimeout(() => {
-    //   this.$router.push('/')
-    // }, 5000)
+    timeout
+  },
+  methods: {
+    clearTimeout () {
+      clearTimeout(timeout)
+    }
   }
 }
 </script>

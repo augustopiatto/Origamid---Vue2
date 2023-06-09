@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomePage from '@/pages/HomePage.vue'
 // componente fica lazy, só é carregado quando se clica para vê-lo
 const SecondaryPage = () => import(/* webpackChunkName: 'secpage' */ '@/pages/SecondaryPage.vue')
-const RickInfos = () => import(/* webpackChunkName: 'secpage' */ '@/components/RickInfos.vue')
+const RickInfos = () => import(/* webpackChunkName: 'secpage' */ '@/pages/RickInfos.vue')
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),

@@ -25,7 +25,7 @@ import router from '@/router/index.js';
 
 const timeout = setTimeout(() => {
   router.push('/')
-}, 5000)
+}, 3000)
 
 export default {
   name: 'SecondaryPage',

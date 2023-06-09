@@ -35,10 +35,7 @@ export default {
       this.visible = false
     },
     confirm() {
-      this.$store.commit('toast', {
-        message: 'Adicionado com sucesso',
-        type: 'success'
-      })
+      this.$store.dispatch('ADD_TO_CART', this.name)
       this.closePopup()
     },
     openPopup() {

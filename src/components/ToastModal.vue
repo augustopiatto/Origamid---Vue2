@@ -24,7 +24,7 @@ export default {
   },
   methods: {
     closeToast() {
-      this.$store.commit('toast', {
+      this.$store.commit('TOAST_INFOS', {
         message: ''
       })
     }

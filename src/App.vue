@@ -5,6 +5,7 @@
       <v-row align="center" justify="center">
         <h1>AugustinhoShop</h1>
       </v-row>
+      <CartIcon />
     </v-toolbar>
     <main class="a__main--bodysize">
       <RouterView v-slot="{ Component }">
@@ -21,6 +22,7 @@
 
 <script lang="js" setup>
 import { RouterView } from 'vue-router'
+import CartIcon from '@/components/cart/CartIcon.vue'
 import DrawerIcon from '@/components/drawer/DrawerIcon.vue'
 import ToastModal from '@/components/ToastModal.vue'
 </script>

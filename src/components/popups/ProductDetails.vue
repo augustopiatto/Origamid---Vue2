@@ -36,7 +36,7 @@ export default {
       this.$emit('close')
     },
     confirm() {
-      this.$store.commit('toast', {
+      this.$store.commit('TOAST_INFOS', {
         message: 'Adicionado com sucesso',
         type: 'success'
       })

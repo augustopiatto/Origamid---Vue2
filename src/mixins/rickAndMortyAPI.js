@@ -16,7 +16,7 @@ export default {
         const jsonResponse = await response.json()
         this.rickAndMorty = jsonResponse.results[0]
       } catch (error) {
-        this.$store.commit('toast', {
+        this.$store.commit('TOAST_INFOS', {
           message: error,
           type: 'error'
         })

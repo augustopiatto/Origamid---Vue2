@@ -1,27 +1,11 @@
-import { createStore } from "vuex";
 
-const STANDARD_DURATION = 5000; // 5 segundos
+import Vuex from "vuex";
+import toast from "./toast.js";
+import cartItems from "./cartItems.js";
 
-export default createStore({
-  state: {
-    toast: {
-      duration: STANDARD_DURATION,
-      message: "",
-      type: "error",
-    },
-  },
-  getters: {
-    toast(state) {
-      return state.toast;
-    },
-  },
-  mutations: {
-    toast(state, obj) {
-      state.toast.duration = obj.duration || STANDARD_DURATION;
-      state.toast.message = obj.message;
-      state.toast.type = obj.type;
-    },
-  },
-  actions: {},
-  modules: {},
+export default new Vuex.Store({
+  modules: {
+    toast: toast,
+    cartItems: cartItems
+  }
 });

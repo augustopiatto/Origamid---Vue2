@@ -5,7 +5,9 @@
   </div>
 </template>
 
-<script>
+<script lang="js">
+import { mapState } from 'vuex'
+
 export default {
   name: 'ToastModal',
   watch: {
@@ -18,9 +20,7 @@ export default {
     }
   },
   computed: {
-    toast() {
-      return this.$store.getters.toast
-    }
+    ...mapState({ toast: state => state.toast.toastObj })
   },
   methods: {
     closeToast() {

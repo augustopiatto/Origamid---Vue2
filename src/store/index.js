@@ -1,11 +1,11 @@
 
 import Vuex from "vuex";
 import toast from "./toast.js";
-import cartItems from "./cartItems.js";
+import cart from "./cart.js";
 
 export default new Vuex.Store({
   modules: {
     toast: toast,
-    cartItems: cartItems
+    cart: cart
   }
 });

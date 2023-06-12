@@ -3,8 +3,16 @@ export default {
     cartItems: []
   },
   getters: {
-    cartItems(state) {
-      return state.cartItems
+    clothesInCart (state) {
+      return state.cartItems.includes('Brusinha')
+    },
+    filterClothes: (state) => (isFiltered) => {
+      // usando function se transforma o getters em métodos. Se procurar esse mapGetters no
+      // código vai ver que é um executável, não é mais uma computed
+      if (!isFiltered) {
+        return state.cartItems
+      }
+      return state.cartItems.filter(item => item === 'Brusinha')
     }
   },
   mutations: {
@@ -13,8 +21,8 @@ export default {
     }
   },
   actions: {
-    ADD_TO_CART({ commit, getters }, item) {
-      if (!getters.cartItems.includes(item)) {
+    ADD_TO_CART({ commit, state }, item) {
+      if (!state.cartItems.includes(item)) {
         commit("ADD_TO_CART", item)
         commit('TOAST_INFOS', {
           message: 'Adicionado com sucesso',

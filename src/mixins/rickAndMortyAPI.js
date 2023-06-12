@@ -1,5 +1,7 @@
 // Fiz mixin só pra aprender, nesse caso onde não tem chamada dessa API em outro componente,
 // não é necessário
+import { api } from '@/api/rickAndMorty.js'
+
 export default {
   data() {
     return {
@@ -11,10 +13,8 @@ export default {
     async getAPI() {
       try {
         this.loading = true
-        // só pra ver o loading
-        const response = await fetch('https://rickandmortyapi.com/api/character')
-        const jsonResponse = await response.json()
-        this.rickAndMorty = jsonResponse.results[0]
+        const response = await api.get('/character')
+        this.rickAndMorty = response.data.results[0]
       } catch (error) {
         this.$store.commit('toast/TOAST_INFOS', {
           message: error,

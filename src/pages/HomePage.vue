@@ -34,7 +34,7 @@
 </template>
 
 <script lang="js">
-import { products } from '@/api'
+import { products } from '@/apimock'
 import HomeModal from '@/components/HomeModal.vue'
 import ProductModal from '@/components/ProductModal.vue'
 

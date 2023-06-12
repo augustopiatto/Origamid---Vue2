@@ -1,6 +1,7 @@
 const STANDARD_DURATION = 5000; // 5 segundos
 
 export default {
+  namespaced: true,
   state: {
     toastObj: {
       duration: STANDARD_DURATION,

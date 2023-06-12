@@ -1,11 +1,11 @@
 
 import Vuex from "vuex";
-import toast from "./toast.js";
-import cart from "./cart.js";
+import toast from "@/store/toast.js";
+import cart from "@/store/cart.js";
 
 export default new Vuex.Store({
   modules: {
-    toast: toast,
-    cart: cart
+    toast,
+    cart
   }
 });

@@ -1,4 +1,5 @@
 export default {
+  namespaced: true,
   state: {
     cartItems: []
   },
@@ -24,13 +25,15 @@ export default {
     ADD_TO_CART({ commit, state }, item) {
       if (!state.cartItems.includes(item)) {
         commit("ADD_TO_CART", item)
-        commit('TOAST_INFOS', {
+        commit('toast/TOAST_INFOS', {
           message: 'Adicionado com sucesso',
           type: 'success'
-        })
+        },
+        { root: true }
+        )
       } else {
         const errorMsg = 'O item já está no carrinho'
-        commit('TOAST_INFOS',
+        commit('toast/TOAST_INFOS',
           { message: errorMsg, type: 'error' },
           { root: true }
         )

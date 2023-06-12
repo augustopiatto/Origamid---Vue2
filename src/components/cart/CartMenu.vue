@@ -25,7 +25,10 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['clothesInCart', 'filterClothes']),
+    ...mapGetters({
+      clothesInCart: 'cart/clothesInCart',
+      filterClothes: 'cart/filterClothes'
+    }),
     ...mapState({ cartItems: state => state.cart.cartItems })
   },
   methods: {

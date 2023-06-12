@@ -35,7 +35,7 @@ export default {
       this.visible = false
     },
     confirm() {
-      this.$store.dispatch('ADD_TO_CART', this.name)
+      this.$store.dispatch('cart/ADD_TO_CART', this.name)
       this.closePopup()
     },
     openPopup() {

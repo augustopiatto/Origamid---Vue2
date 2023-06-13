@@ -22,7 +22,14 @@
         </v-autocomplete>
       </v-col>
       <v-col cols="12">
-        <!-- fazer aqui a adição no carrinho por input usando store -->
+        <!-- Sem utilidade na usabilidade, só por questão de código -->
+        <v-select
+          v-model="cartProduct"
+          label="Quero adicionar em um objeto da store pelo v-model porque sou pra frentex"
+          item-title="name"
+          :items="products"
+        />
+        <!-- Sem utilidade na usabilidade, só por questão de código -->
       </v-col>
       <v-col cols="12">
         <v-row align="center" justify="center" class="py-5 gap-5">
@@ -38,6 +45,7 @@
 </template>
 
 <script lang="js">
+import { mapFields } from '@/helpers/helpers.js'
 import { products } from '@/apimock'
 import HomeModal from '@/components/HomeModal.vue'
 import ProductModal from '@/components/ProductModal.vue'
@@ -60,6 +68,12 @@ export default {
     this.products = await products.getProducts()
   },
   computed: {
+    ...mapFields ({
+      fields: ['cartProduct'],
+      file: 'cart',
+      base: 'cartObj',
+      mutation: 'ADD_CART_OBJ_FIELD'
+    }),
     chosenComponent () {
       const components = {
         home: 'HomeModal',

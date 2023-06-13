@@ -1,7 +1,8 @@
 export default {
   namespaced: true,
   state: {
-    cartItems: []
+    cartItems: [],
+    cartObj: {}
   },
   getters: {
     clothesInCart (state) {
@@ -19,6 +20,9 @@ export default {
   mutations: {
     ADD_TO_CART(state, item) {
       state.cartItems.push(item)
+    },
+    ADD_CART_OBJ_FIELD(state, obj) {
+      state.cartObj = Object.assign(state.cartObj, obj)
     }
   },
   actions: {

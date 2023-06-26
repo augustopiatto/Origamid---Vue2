@@ -33,6 +33,7 @@ export default {
   async created () {
     await this.getAPI()
     timeout
+    document.title = 'Secondary Page'
   },
   methods: {
     clearTimeout () {

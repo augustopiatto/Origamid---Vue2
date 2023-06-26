@@ -65,6 +65,7 @@ export default {
     }
   },
   async mounted () {
+    document.title = 'Home'
     this.products = await products.getProducts()
   },
   computed: {

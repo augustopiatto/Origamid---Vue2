@@ -29,8 +29,9 @@ O projeto inclui as seguintes tecnologias:
 ### Funcionalidades
 O projeto possui as seguintes funcionalidades:
 
-Entradas para a compra de uma viagem.
-Validação de dados.
+- Tela com exibição de produtos
+- Adição dos itens comprados para o seu carrinho (usando store)
+- Tela secundária para visualizar um personagem fictício (usando router)
 
 ## Scripts
 O projeto inclui os seguintes scripts:

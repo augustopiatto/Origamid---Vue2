@@ -5,7 +5,14 @@ Utiliza Vue 3, Javascript, Vuex, Vite, Vitest, Router.
 Criado para colocar em prática os aprendizados do curso de Vue 2 do site https://www.origamid.com/.
 
 ## Preview
-O projeto é uma página de vendas não funcional, mas criada para usar cada conceito visto no curso. Quem sabe futuramente eu melhore o projeto?
+O projeto é uma página de vendas não funcional, mas criada para usar cada conceito visto no curso.
+Futuramente vou implementar (TODO LIST):
+- Login
+- Salvar por 1h os itens adicionados
+- Permitir remover do carrinho
+- Permitir remover todos de uma só vez
+- Corrigir página inicial
+- Fazer algo útil na página secundária
 
 ## Começando
 Para iniciar o projeto, siga os passos abaixo:

@@ -6,13 +6,13 @@ Criado para colocar em prática os aprendizados do curso de Vue 2 do site https:
 
 ## Preview
 O projeto é uma página de vendas não funcional, mas criada para usar cada conceito visto no curso.
-Futuramente vou implementar (TODO LIST):
-- Login
-- Salvar por 1h os itens adicionados
-- Permitir remover do carrinho
-- Permitir remover todos de uma só vez
-- Corrigir página inicial
-- Fazer algo útil na página secundária
+
+### Telas
+
+- TODO
+- Tela com exibição de produtos
+- Adição dos itens comprados para o seu carrinho (usando store)
+- Tela secundária para visualizar um personagem fictício (usando router)
 
 ## Começando
 Para iniciar o projeto, siga os passos abaixo:
@@ -29,21 +29,35 @@ O projeto inclui as seguintes tecnologias:
 - Vue 3 para construir interfaces de usuário reativas
 - JavaScript para desenvolvimento e escalabilidade
 - Vuex para gerenciamento de estado
+- Vue Router para navegação em uma Single Page Application
 - Vite como bundler
-- Vitest para testes unitários
-- Router para navegação em uma Single Page Application
+- Vitest para testes unitários (TODO)
 
 ### Funcionalidades
 O projeto possui as seguintes funcionalidades:
 
-- Tela com exibição de produtos
-- Adição dos itens comprados para o seu carrinho (usando store)
-- Tela secundária para visualizar um personagem fictício (usando router)
+- Diretivas
+- Vuex
+- Vue Router
+- Axios
+- Componentes
+- Animações
+- REST API
+- SCSS (visualização mobile inclusa)
 
 ## Scripts
 O projeto inclui os seguintes scripts:
 
-- npm run dev: Inicia o servidor de desenvolvimento
-- npm run build: Builda o aplicativo pronto para produção
-- npm run lint: Linta e corrige os arquivos
-- npm run test:unit: Executa os testes unitários usando o Vitest
+- ```npm run dev```: Inicia o servidor de desenvolvimento
+- ```npm run build```: Builda o aplicativo pronto para produção
+- ```npm run lint```: Linta e corrige os arquivos
+- ```npm run test:unit```: Executa os testes unitários usando o Vitest
+
+## Modificações Futuras
+
+- Login
+- Salvar por 1h os itens adicionados
+- Permitir remover do carrinho
+- Permitir remover todos de uma só vez
+- Corrigir página inicial
+- Fazer algo útil na página secundária

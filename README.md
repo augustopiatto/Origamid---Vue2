@@ -1,7 +1,7 @@
 # Origamid-Vue
 
 ## Visão Geral do Projeto
-Utiliza Vue 3, Javascript, Vuex, Vite, Vitest, Router.
+Utiliza Vue 3, Vuetify 3, Javascript, Vuex, Vite, Vitest, Router.
 Criado para colocar em prática os aprendizados do curso de Vue 2 do site https://www.origamid.com/.
 
 ## Preview
@@ -27,6 +27,7 @@ Para iniciar o projeto, siga os passos abaixo:
 O projeto inclui as seguintes tecnologias:
 
 - Vue 3 para construir interfaces de usuário reativas
+- Vuetify 3 para uso de componentes
 - JavaScript para desenvolvimento e escalabilidade
 - Vuex para gerenciamento de estado
 - Vue Router para navegação em uma Single Page Application
@@ -39,6 +40,7 @@ O projeto possui as seguintes funcionalidades:
 - Diretivas
 - Vuex
 - Vue Router
+- Vuetify 3
 - Axios
 - Componentes
 - Animações
